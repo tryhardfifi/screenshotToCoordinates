@@ -1,0 +1,15 @@
+build:
+  gpu: true
+  python_version: "3.10"
+  python_packages:
+    - git+https://github.com/huggingface/transformers
+    - torch==1.12.1
+    - torchvision
+    - sentencepiece==0.1.97
+    - accelerate==0.16.0
+    - safetensors
+    - qwen-vl-utils
+    - "numpy<2.0"
+    - jinja2
+predict: "predict.py:Predictor"
+

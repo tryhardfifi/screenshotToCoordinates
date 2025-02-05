@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+import os
+import shutil
+from transformers import Qwen2VLForConditionalGeneration, AutoTokenizer, AutoProcessor
+
+CACHE_DIR = "weights"
+
+if os.path.exists(CACHE_DIR):
+    shutil.rmtree(CACHE_DIR)
+
+os.makedirs(CACHE_DIR)
+
+model = Qwen2VLForConditionalGeneration.from_pretrained("Qwen/Qwen2-VL-2B-Instruct", cache_dir=CACHE_DIR)
+tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2-VL-2B-Instruct", cache_dir=CACHE_DIR)
+processor = AutoProcessor.from_pretrained("Qwen/Qwen2-VL-2B-Instruct", cache_dir=CACHE_DIR)
+
