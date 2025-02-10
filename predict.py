@@ -13,8 +13,8 @@ class Predictor(BasePredictor):
         )
         self.model.to(self.device)
         # Load the processor and tokenizer.
-        self.processor = AutoProcessor.from_pretrained("Qwen/Qwen2-VL-2B-Instruct")
-        self.tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2-VL-2B-Instruct")
+        self.processor = AutoProcessor.from_pretrained("Qwen/Qwen2-VL-7B-Instruct")
+        self.tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2-VL-7B-Instruct")
 
     def predict(
         self,
